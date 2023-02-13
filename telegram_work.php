@@ -13,3 +13,17 @@ $resultQuery = curl_exec($ch);
 curl_close($ch);
 
 echo $resultQuery;
+
+
+Второй вариант
+
+
+$token = "5340791844:AAEXXD786InvQrlWHRXykV91USOQSevrPVU";
+$chat_id = -594377170;
+
+$textMessage = "Тестовое сообщение";
+$textMessage = urlencode($textMessage);
+
+$urlQuery = "https://api.telegram.org/bot". $token ."/sendMessage?chat_id=". $chat_id ."&text=" . $textMessage;
+
+$result = file_get_contents($urlQuery);
